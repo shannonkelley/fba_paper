@@ -29,9 +29,9 @@ mrthreshold fa_fwe_pvalue.mif -abs 0.95 - | mrstats fa_fwe_pvalue_neg.mif -mask 
 # Done on the fwe_pvalue file and the std_effect file for streamline visualization
 #Visualize fixel
 
-fixel2tsf fixel.mif tracks_2million_sift.tck fixel.tsf
+fixel2tsf fixel.mif tracks_2_million_sift.tck fixel.tsf
 
 #Visualize voxel
 
 voxel2fixel fa_fwe_pvalue.mif input fa_pvalue_fixel.mif
-fixel2tsf fa_pvalue_fixel.mif tracks_2million_sift.tck fa_pvalue.tsf
+fixel2tsf fa_pvalue_fixel.mif tracks_2_million_sift.tck fa_pvalue.tsf
