@@ -1,12 +1,11 @@
-%columns are subjects (1:25 old; 26:45 young); rows are tracts
-%positive t indicates young > old
 
-cd /nfs/tpolk/mind/diffusion/singleshell/TSA/Outputs/
 
-files = {'favalues', 'fdvalues', 'fcvalues', 'fdcvalues', 'complexityvalues', 'controlvalues'};
+cd TSA/Outputs/
+
+files = {'favalues', 'fdvalues', 'fcvalues', 'fdcvalues'};
 numPerms = 10000;
 
-for file_i = 1:6
+for file_i = 1:4
     file = [files{file_i} '.csv']
     data = csvread(file,1,1);
 
@@ -65,7 +64,7 @@ rownames = {'L_Cing_ret'
 	'L_Uncinate_fasciculus'
 	'R_Uncinate_fasciculus'};
 
-columnnames = {'FA', 'FD', 'FC', 'FDC', 'C', 'Corrected'};
+columnnames = {'FA', 'FD', 'FC', 'FDC'};
 
 table_sig.Properties.RowNames = rownames;
 table_sig.Properties.VariableNames = columnnames;
