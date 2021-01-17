@@ -1,4 +1,4 @@
-%Get individual and mean FDC values for each tract.
+%Get mean individual FDC values for each tract.
 
 fdc = [];
 
