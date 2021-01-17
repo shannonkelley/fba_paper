@@ -1,8 +1,6 @@
 %Get individual and mean FDC values for each tract.
 
 fdc = [];
-fdc_mean = [];
-
 
 tracts = {'Cingulum_ret/L_fdcvalues.txt', ...
 'Cingulum_ret/R_fdcvalues.txt', ...
@@ -38,17 +36,15 @@ tracts = {'Cingulum_ret/L_fdcvalues.txt', ...
 'Uncinate_fasciculus/L_fdcvalues.txt' ...
 'Uncinate_fasciculus/R_fdcvalues.txt'};
 
-cd /nfs/tpolk/mind/diffusion/singleshell/TSA/Tracts/
+cd Tracts/
 
 for i = 1:length(tracts);
 nums = importdata(tracts{i});
-avg = mean(nums);
-fdc_mean = [fdc_mean avg];
 fdc = [fdc nums];
 end
 
 fdctab = array2table(fdc');
-fdctab_mean = array2table(fdc_mean');
+
 
 variablenames = {'L_Cing_ret'
 	'R_Cing_ret'
@@ -85,5 +81,4 @@ variablenames = {'L_Cing_ret'
 	'R_Uncinate_fasciculus'};
 
 fdctab.Properties.RowNames = variablenames;
-fdctab_mean.Properties.RowNames = variablenames;
-writetable(fdctab, '/nfs/tpolk/mind/Shannon/TSA/Outputs/fdcvalues.csv', 'WriteRowNames', true);
+writetable(fdctab, 'TSA/Outputs/fdcvalues.csv', 'WriteRowNames', true);
