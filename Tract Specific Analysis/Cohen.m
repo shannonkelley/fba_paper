@@ -12,7 +12,7 @@ cohen100 = (mean2-mean1)/pooled;
 
 
 v(1:100, 1) = cohen100;
-fid =fopen('./Cohen/Lfacohen100_new.txt', 'wt');
+fid =fopen('./Lfacohen100_new.txt', 'wt');
 
 if fid > 0;
 	fprintf(fid, '%d\n',v');
