@@ -42,16 +42,4 @@ mrthreshold -abs 0.1 -invert Young_5tt_3.mif t1youngCSF.mif
 mrmath t1oldCSF.mif t1youngCSF.mif min ../template/CSFmask.mif
 Voxel2fixel ../template/fixel_mask/ ../template/ CSFmask_fixel.mif 
 
-rm -r ./young
-rm -r ./old
-rm Old_T1.mif
-rm Old_5tt.mif
-rm Old_5tt_3.mif
-rm t1oldCSF.mif
-rm Young_T1.mif
-rm Young_5tt.mif
-rm Young_5tt_3.mif
-rm t1youngCSF.mif
-
-
 
