@@ -1,4 +1,4 @@
-﻿FAdir=/c/Users/shann/OneDrive/Desktop/Correlation_Figure/Old/FA
+﻿FAdir=Correlation_Figure/Old/FA
 CXdir=/c/Users/shann/OneDrive/Desktop/Correlation_Figure/Old/CX
 
 
