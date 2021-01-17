@@ -1,0 +1,9 @@
+tck2fixel Cingulum_ret/Rret_track.tck path/to/input/ Cingulum_ret/ R_Cingulum_TDI.mif 
+mrthreshold -abs  42.04 Cingulum_ret/R_Cingulum_TDI.mif Cingulum_ret/R_Cingulum_mask.mif 
+fixel2voxel Cingulum_ret/R_Cingulum_mask.mif mean Cingulum_ret/R_fa_track.mif
+
+mrcalc Cingulum_ret/R_Cingulum_mask.mif path/to/pvedata/CSFmask_fixel.mif -mult Cingulum_ret/R_Cingulum_mask2.mif
+foreach Data_FBA/template/fdc/* : mrstats IN -output mean -mask  Cingulum_ret/Tract_Masks/R_Cingulum_mask2.mif >> Cingulum_ret/Values/R_fdcvalues.txt
+
+mrcalc Cingulum_ret/R_fa_track.mif path/to/pvedata/csfmask.mif -mult Cingulum_ret/R_fa_track2.mif
+foreach Data_FA/* : mrstats IN/ -output mean -mask  Cingulum_ret/R_fa_track2.mif >> Cingulum_ret/Values/R_complexvalues.txt
